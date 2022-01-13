@@ -42,9 +42,23 @@ function generatePassword() {
       break;
     }
 
-    passwordlength = prompt(
-      "Invalid input please select a number between 8 and 100 for amount of characters in password"
-    );
+    //Answers to character type prompts!
+  var charactertypes = [
+    "lowercase",
+    "uppercase",
+    "numeric",
+    "special characters",
+  ];
+  var allowedcharactertypes = [];
+  while (true) {
+    charactertypes.forEach(function (charactertype) {
+      var selection =  confirm("Do you want to allow" + charactertype);
+      if (selection) {
+        allowedcharactertypes.push(charactertype);
+      }
+  });
+  if (allowedcharactertypes.length > 0) {
+    break;
   }
 
   // Add event listener to generate button //
