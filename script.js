@@ -23,8 +23,29 @@ function writePassword() {
 
 function generatePassword() {
   var passwordlength = prompt(
-    "choose a number of characters between 8 and 128!"
+    "choose the amount of characters in your password between 8 and 100!"
   );
+  while (true) {
+    if (passwordlength === null) {
+      return;
+    }
+    var failed = false;
+    var input = number(passwordlength);
+    console.log(typeof passwordlength);
+    if (!/^[0-9]*$/.test(passwordlength)) {
+      failed = true
+    }
+    if (input < 8 || input > 100) {
+      failed = true;
+    }
+    if (failed === false) {
+      break;
+    }
 
-    // Add event listener to generate button //
-  generateBtn.addEventListener("click", writePassword);}
+    passwordlength = prompt(
+      "Invalid input please select a number between 8 and 100 for amount of characters in password"
+    );
+  }
+
+  // Add event listener to generate button //
+  generateBtn.addEventListener("click", writePassword);
