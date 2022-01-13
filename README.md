@@ -3,6 +3,6 @@
 # Motive
 ## A website that generates a strong password for everyone to use.
 
-#Live URL
+# Live URL
 
-#screenshot
+# screenshot
