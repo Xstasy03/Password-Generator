@@ -24,7 +24,7 @@ function writePassword() {
 
 function generatePassword() {
   var passwordlength = prompt(
-    "Choose a number of characters wanted in your password between 8 and 100!"
+    "Choose a number of characters wanted in your password between 8 and 128!"
   );
 
   while (true) {
@@ -37,7 +37,7 @@ function generatePassword() {
     if (!/^[0-9]*$/.test(passwordlength)) {
       failed = true;
     }
-    if (input < 8 || input > 100) {
+    if (input < 8 || input > 128) {
       failed = true;
     }
     if (failed === false) {
@@ -45,7 +45,7 @@ function generatePassword() {
     }
 
     passwordlength = prompt(
-      "Invalid input please input a number of characters between 8 and 100"
+      "Invalid input please input a number of characters between 8 and 128"
     );
   }
 
